@@ -101,12 +101,11 @@ def main():
     passports = parse_passport_file(args.filename)
 
     # Part 1
-    valid_passports = [p for p in passports if complete_passport(p)]
-    print(len(valid_passports))
+    complete_passports = [p for p in passports if complete_passport(p)]
+    print(len(complete_passports))
 
     # Part 2
     valid_passports = 0
-    complete_passports = [p for p in passports if complete_passport(p)]
     for passport in complete_passports:
         for k, v in passport.items():
             if not valid_passport_field(k, v):
